@@ -1,0 +1,676 @@
+@media(min-width: 769px){
+body{
+   background-color: rgb(0, 0, 0);
+   overflow: hidden;
+}
+main h1{
+   color:gray;
+   margin-top: 50px;
+}
+header{
+   background: linear-gradient(white, gray);
+   background-attachment: scroll;
+   padding-right: 1em;
+   width: 100%;
+   height: min-content;
+   display: flex;
+   align-items: center;
+}
+nav{
+   background: linear-gradient(#8000ff, #340068);
+   background-attachment: scroll;
+   height: min-content;
+   padding-left: 10px;
+   display: flex;
+   padding-left: 35%;
+   align-items: center;
+}
+
+ul{
+   list-style-type: none;
+}
+
+.films-movile{
+   display: none;
+}
+
+main{
+   color: white;
+   text-align: center;
+   justify-content: center;
+   color: #8000ff;
+   height: 750px;
+   overflow-y: scroll;
+}
+
+p{
+   margin-top: 0px;
+   margin-bottom: 0px;
+}
+
+main a:hover{
+   color: white;
+   cursor: pointer;
+}
+
+aside{
+   color: white;
+   float: left;
+   padding-left: 5px;
+   margin-right: 50px;
+}
+
+/* Botones animados */
+.buttons ul{
+   position: relative;
+   display: flex;
+   gap: 25px;
+}
+.buttons ul li{
+   position: relative;
+   list-style: none;
+   width: 60px;
+   height: 60px;
+   border-radius: 60px;
+   cursor: pointer;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   box-shadow: 0 10px 25px rgba(0, 0, 0, 0);
+}
+.buttons ul li:hover{
+   width: 180px;
+   box-shadow: 0 10px 25px rgba(0, 0, 0, 0);
+}
+.buttons ul li::before{
+   content: "";
+   position: absolute;
+   inset: 0;
+   border-radius: 50px;
+   background: linear-gradient(45deg, var(--i), var(--j));
+   opacity: 0;
+   transition: 0.5s;
+}
+.buttons ul li:hover::before{
+   opacity: 1;
+}
+.buttons ul li::after{
+   content: "";
+   position: absolute;
+   top: 10px;
+   width: 100%;
+   height: 100%;
+   border-radius: 60px;
+   background: linear-gradient(45deg, var(--i), var(--j));
+   opacity: 0;
+   transition: 0.5s;
+   z-index: -1;
+   filter: blur(15px);
+}
+.buttons ul li:hover::after{
+   opacity: 0.5;
+}
+.buttons ul li i{
+   color: #777;
+   font-size: 1.75em;
+   transition: 0.5s;
+   transition-delay: 0.25s; 
+}
+.buttons ul li:hover i{
+   transform: scale(0);
+   font-size: 1.75em;
+   transition-delay: 0.25s;
+}
+.buttons ul li section{
+   position: absolute;
+}
+.buttons ul li .titulo{
+   color: #fff;
+   font-size: 1.1em;
+   text-transform: uppercase;
+   letter-spacing: 0.1em;
+   transform: scale(0);
+   transition: 0.5s;
+   transition-delay: 0s;
+   color: black;
+}
+.buttons ul li:hover .titulo{
+   transform: scale(1);
+   transition-delay: 0.25s;
+}
+
+/* Botones normales */
+.normal ul li:hover{
+   color: #fff;
+   cursor: pointer;
+}
+
+a{
+   text-decoration: none; 
+}
+
+a:hover{
+   color: #fff;
+   cursor: pointer;
+}
+
+/* section main */
+.films main{
+   padding-top: 10px;
+   padding-bottom: 10px;
+   overflow-y: scroll;
+   
+}
+
+/* Noticias */
+
+.news aside{
+   float: left;
+   overflow-y: scroll;
+   justify-content: flex-start;
+   height: 750px;
+   width: 200px;
+}
+
+.new{
+   color: #8000ff;
+   justify-content: center;
+   text-align: center;
+   font-size: small;
+   margin-top: 10px;
+   margin-right: 10px;
+   margin-left: 10px;
+}
+
+/* Peliculas */
+
+.hidden-radio {
+   position: absolute;
+   opacity: 0;
+   pointer-events: none;
+ }
+ 
+ .radio-icon {
+   display: inline-block;
+   cursor: pointer;
+   padding-left: 25px;
+ }
+ 
+ .radio-icon i {
+   font-size: 14px;
+ }
+ 
+ input[type="submit"] {
+   margin-top: 10px;
+ }
+
+ .popup {
+   position: absolute;
+   display: none;
+   background-color: #f9f9f9;
+   border: 1px solid #ccc;
+   padding: 10px;
+   max-width: 200px;
+}
+
+.seccion{
+   display: flex;
+   justify-content: space-around;
+   
+   flex-wrap: wrap;
+   
+}
+
+.seccion section{
+   flex: 0 0 calc(33.33% - 10px);
+    margin: 5px;
+}
+
+
+.film{
+   color:rgb(255, 255, 255);
+   margin-right: 200px;
+   text-align: center;
+   margin-top: 20px;
+   color: #8000ff;
+   height: 580px;
+   width: 300px;
+   margin-bottom: 20px;
+}
+
+/* imagenes */
+
+img.logo{
+   height: 300px;
+   width: 400px;
+}
+
+img.small{
+   width: 80px;
+   height: 80px;
+}
+
+img.medium{
+   width: 250px;
+   height: 400px;
+}
+
+/* Registro */
+
+.registro{
+   position: relative;
+   float: right;
+   margin: auto;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.registro input{
+   margin-bottom: 1.5%;
+}
+
+/* Cada pelicula */
+
+.imgs{
+   display: flex;
+   width: 100%;
+   justify-content: center;
+}
+
+.imgs img{
+   width: 150px;
+   height: 100px;
+   margin-top: 1%;
+   margin-right: 1%;
+}
+
+.datos{
+   display: grid;
+   margin-top: 100px;
+   float: left;
+   text-align: left;
+   color:gray;
+   height: 100%;
+}
+
+.datos p{
+   margin-top: 0.5%;
+}
+
+.comentarios{
+   text-align: center;
+}
+
+.horarios table{
+   justify-content: center;
+   align-items: center;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 5%;
+   margin-bottom: 5%;
+}
+
+.horarios main{
+   height: min-content;
+}
+
+.info main{
+   text-align: center;
+   color: white;
+}
+
+.info{
+   color: white;
+}
+
+.info h1{
+   margin-bottom: 4%;
+}
+
+.formulario{
+   align-items: center;
+   margin-top: 100px;
+}
+
+.notice nav{
+   background: black;
+   width: 100%;
+   align-items: left;
+   padding-left: 0px;
+   padding-right: 25px;
+   
+}
+
+.notice p{
+   color: white;
+   align-items: center;
+   margin-left: 2%;
+   margin-right: 2%;
+   margin-top: 5%;
+}
+
+.notice ul{
+   width: 100%;
+}
+
+.titu h1{
+   text-align:center; 
+   font-size:175px; 
+   padding-top:50px;
+   
+}
+
+.news-movile{
+   display: none;
+}
+
+.comentarios-form{
+   align-items: center;
+   margin-top: 0px;
+}
+
+.other-comments{
+   color: #777;
+   margin-top: 500px;
+   margin-bottom: 0px;
+}
+.valoracion {
+   display: flex;
+   flex-direction: row-reverse;
+   place-content: center;
+}
+.valoracion button {
+   background-color: initial;
+   border: 0;
+   color: var(--color-inactivo);
+   transition: 1s all;
+}
+.valoracion button:hover {
+   cursor: pointer;
+   color: var(--color-hover);
+   transform: rotate(360deg);
+}
+button:nth-child(1):hover ~ button {
+   color: var(--color-hover);
+   transform: rotate(360deg);
+}
+button:nth-child(2):hover ~ button {
+   color: var(--color-hover);
+   transform: rotate(360deg);
+}
+button:nth-child(3):hover ~ button {
+   color: var(--color-hover);
+   transform: rotate(360deg);
+}
+button:nth-child(4):hover ~ button {
+   color: var(--color-hover);
+   transform: rotate(360deg);
+}
+button:nth-child(5):hover ~ button {
+   color: var(--color-hover);
+   transform: rotate(360deg);
+}
+}
+
+@media(max-width: 480px){
+   body{
+      background-color: rgb(0, 0, 0);
+      overflow: hidden;
+      height:auto;
+   }
+   main h1{
+      color:gray;
+      margin-top: 50px;
+   }
+   header{
+      background: linear-gradient(white, gray);
+      background-attachment: scroll;
+      height: min-content;
+      display: flex;
+      align-items: center;
+   }
+
+   nav{
+      background: linear-gradient(#8000ff, #340068);
+      background-attachment: scroll;
+      height: min-content;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding-right: 1vw;
+      justify-content: space-around;
+   }
+
+   ul{
+      list-style-type: none;
+   }
+   
+   main{
+      color: white;
+      text-align: center;
+      justify-content: center;
+      color: #8000ff;
+      height: 750px;
+   }
+
+   img.logo{
+      height: 50vw;
+      width: 50vw;
+      align-items: center;
+   }
+
+   .titu h1{
+      text-align:center; 
+      font-size:100px; 
+      padding-top:20px;
+      display: none;
+   }
+
+   .registro{
+      position: relative;
+      float: right;
+      width: 100%;
+      padding-right: 1vw;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 80%;
+   }
+   
+   .registro input[type="text"],
+   input[type="password"]{
+      margin-bottom: 1.5%;
+      margin-right: 1%;
+      width: 75%;
+      height: 50%;
+   }
+
+   .titulo{
+      font-size: 2.5vw;
+      margin-right: 2%;
+   }
+
+.icons{
+   display: none;
+}
+
+.material-icons{
+   display: none;
+}
+
+ul{
+   list-style-type: none;
+   display: flex;
+}
+
+ul li{
+   margin-right: 10px;
+}
+
+img.small{
+   width: 20vw;
+   height: 20vw;
+}
+
+img.medium{
+   width: 30vw;
+   height: 50vw;
+}
+
+.news aside{
+   float: left;
+   overflow-y: scroll;
+   justify-content: flex-start;
+   height: 700vw;
+   width: 200px;
+}
+
+.new{
+   color: #8000ff;
+   justify-content: center;
+   text-align: center;
+   font-size: small;
+   margin-top: 10px;
+   margin-right: 10px;
+   margin-left: 10px;
+}
+
+/* Peliculas */
+
+.seccion{
+   display: flex;
+   justify-content: space-around;
+   margin-left: auto;
+   margin-bottom: 20px;
+}
+
+.film{
+   color:rgb(255, 255, 255);
+   margin-right: auto;
+   text-align: center;
+   margin-top: 20px;
+   color: #8000ff;
+   height: 50%;
+   width: 100%;
+   margin-bottom: 20px;
+}
+
+.films-movile main{
+   padding-top: 10px;
+   padding-bottom: 10px;
+   text-align: center;
+   color:#8000ff;
+   height: 100%;
+}
+
+.films{
+   display: none;
+}
+
+a{
+   text-decoration: none; 
+}
+
+a:hover{
+   color: #fff;
+   cursor: pointer;
+}
+
+.news-movile{
+   display: flex;
+   overflow-x: scroll;
+}
+
+.news aside{
+   display: none;
+   float: left;
+   overflow-y: scroll;
+   justify-content: flex-start;
+   height: 750px;
+   width: 200px;
+}
+
+.normal ul li:hover{
+   color: #fff;
+   cursor: pointer;
+}
+.imgs{
+   display: flex;
+   width: 100%;
+   justify-content: center;
+}
+
+.imgs img{
+   width: 150px;
+   height: 100px;
+   margin-top: 1%;
+   margin-right: 1%;
+}
+
+.datos{
+   display: grid;
+   margin-top: 100px;
+   float: left;
+   text-align: left;
+   color:gray;
+}
+
+.datos p{
+   margin-top: 0.5%;
+}
+
+.comentarios{
+   text-align: center;
+}
+
+.horarios table{
+   justify-content: center;
+   align-items: center;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 5%;
+   margin-bottom: 5%;
+}
+
+.horarios main{
+   height: min-content;
+}
+
+.info main{
+   text-align: center;
+   color: white;
+}
+
+.info{
+   color: white;
+}
+
+.info h1{
+   margin-bottom: 4%;
+}
+
+.notice nav{
+   background: black;
+   width: 100%;
+   align-items: left;
+   padding-left: 0px;
+   padding-right: 25px;
+   
+}
+
+.notice p{
+   color: white;
+   align-items: center;
+   margin-left: 2%;
+   margin-right: 2%;
+   margin-top: 5%;
+}
+
+.notice ul{
+   width: 100%;
+}
+
+}
+
